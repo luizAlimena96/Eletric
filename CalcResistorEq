@@ -1,0 +1,22 @@
+# Dados de entrada
+v = 440  # Tensão em volts
+p_total = 250000  # Potência total em watts
+num_resistores = 50  # Número de resistores
+
+# Cálculo da resistência equivalente
+req = num_resistores * (v ** 2) / p_total
+
+# Cálculo da resistência de cada resistor
+r = req / num_resistores
+
+# Cálculo da corrente em cada resistor
+i = v / r
+
+# Cálculo da potência em cada resistor
+p_resistor = v ** 2 / r
+
+# Saída dos resultados
+print(f'Resistência equivalente: {req:.2f} ohms')
+print(f'Resistência de cada resistor: {r:.2f} ohms')
+print(f'Corrente em cada resistor: {i:.2f} A')
+print(f'Potência em cada resistor: {p_resistor/1000:.2f} kW')
